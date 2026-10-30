@@ -37,6 +37,7 @@
 #if defined(_MSC_VER)
 #include <intrin.h>
 #define AEGIS_NOINLINE __declspec(noinline)
+#define AEGIS_NOIPA
 #define AEGIS_BARRIER(value) \
     ::_ReadWriteBarrier();   \
     (void)(value)
@@ -48,6 +49,11 @@
 #define AEGIS_NOIPA
 #endif
 #define AEGIS_BARRIER(value) __asm__ __volatile__("" : "+r"(value))
+#endif
+
+// Sicherheitsnetz fuer unbekannte Compiler (z. B. clang-cl ohne __GNUC__).
+#ifndef AEGIS_NOIPA
+#define AEGIS_NOIPA
 #endif
 
 #ifndef AEGIS_LITERAL_KEY
