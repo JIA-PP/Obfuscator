@@ -72,7 +72,8 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j
 ctest --test-dir build --output-on-failure
 ./build/aegis_demo            # Bericht (beendet nichts)
-./build/aegis_demo --protect  # Schutzmodus
+./build/aegis_demo --protect  # Schutzmodus (beendet sich bei Verdacht)
+./build/aegis_demo --ignore-vm --watchdog 10 --interval 500   # Watchdog-Test
 ```
 
 Einbinden in ein bestehendes CMake-Projekt:
@@ -177,8 +178,10 @@ guard.add_dataset(aegis::data::kDataset);   // vor protect() aufrufen
 ```
 
 Verifiziert durch `tools/check_no_plaintext.py` (läuft als CTest mit):
-das gebaute Beispiel enthält **keine** der ~140 Werkzeug-/VM-Signaturen als
-ASCII-Klartext – unter Linux und Windows.
+das gebaute Beispiel enthält **keine** der Signaturen als ASCII-Klartext –
+weder Prozessnamen (166) noch Fenstertitel (54) noch die 213 Text-Artefakte
+(VM-Kennungen, Hypervisor-Vendoren, Container-Marker, Tracer-Namen) – unter
+Linux und Windows geprüft.
 
 > **Wichtig:** Das ist Verschleierung, keine Kryptographie gegen einen
 > Angreifer, der den Schlüssel aus dem Binary extrahiert. Wer den Prozess
