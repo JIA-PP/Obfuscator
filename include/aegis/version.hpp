@@ -1,0 +1,10 @@
+// SPDX-License-Identifier: MIT
+#ifndef AEGIS_VERSION_HPP
+#define AEGIS_VERSION_HPP
+
+#define AEGIS_VERSION_MAJOR 1
+#define AEGIS_VERSION_MINOR 0
+#define AEGIS_VERSION_PATCH 0
+#define AEGIS_VERSION_STRING "1.0.0"
+
+#endif  // AEGIS_VERSION_HPP

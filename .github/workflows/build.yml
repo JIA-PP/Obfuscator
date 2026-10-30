@@ -1,0 +1,142 @@
+name: build-and-test
+
+on:
+  push:
+    branches: ["main", "arena/**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  linux:
+    name: Linux (${{ matrix.compiler }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [gcc, clang]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Configure
+        run: >
+          cmake -S . -B build -G Ninja
+          -DCMAKE_BUILD_TYPE=Release
+          -DCMAKE_CXX_COMPILER=${{ matrix.compiler == 'gcc' && 'g++' || 'clang++' }}
+          -DAEGIS_WARNINGS_AS_ERRORS=ON
+
+      - name: Build
+        run: cmake --build build -j 4
+
+      - name: Tests (Unit + Klartext-Scanner + Tabellen)
+        run: ctest --test-dir build --output-on-failure
+
+      - name: Demo-Bericht
+        run: |
+          ./build/aegis_demo --json | tee report.json
+          python3 -c "import json,sys; d=json.load(open('report.json')); print('Score:', d['score'], 'blocked:', d['blocked'])"
+
+      - name: Entscheidungslogik (Simulation)
+        run: |
+          set +e
+          ./build/aegis_demo --simulate critical --json > sim.json
+          status=$?
+          set -e
+          cat sim.json
+          python3 -c "import json; d=json.load(open('sim.json')); assert d['blocked'] is True, d"
+          test "$status" -eq 1
+
+      - name: Artefakt
+        uses: actions/upload-artifact@v4
+        with:
+          name: aegis-linux-${{ matrix.compiler }}
+          path: |
+            build/aegis_demo
+            build/libaegis.a
+          if-no-files-found: warn
+
+  windows:
+    name: Windows (MSVC)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Configure
+        run: cmake -S . -B build -A x64
+
+      - name: Build
+        shell: pwsh
+        run: |
+          cmake --build build --config Release -j 4 2>&1 | Tee-Object -FilePath build-log.txt
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Build-Log (nur bei Fehler)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-build-log
+          path: build-log.txt
+          if-no-files-found: warn
+
+      - name: Fehlerdetails als PR-Kommentar
+        if: failure()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        continue-on-error: true
+        run: |
+          pr=$(gh pr list --head "${GITHUB_REF_NAME}" --json number -q '.[0].number' || true)
+          if [ -n "$pr" ] && [ -f build-log.txt ]; then
+            { echo "MSVC-Buildfehler (automatisch):"; echo '```';               grep -iE "error|warning" build-log.txt | head -60; echo '```'; } > comment.md
+            gh pr comment "$pr" --body-file comment.md
+          fi
+
+      - name: Tests (Unit + Klartext-Scanner + Tabellen)
+        run: ctest --test-dir build -C Release --output-on-failure
+
+      - name: Demo-Bericht (JSON)
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Continue"
+          & .\build\Release\aegis_demo.exe --json | Tee-Object -FilePath report.json
+          $report = Get-Content report.json -Raw
+          if (-not ($report -match '"version"')) { throw "Demo lieferte kein JSON" }
+          $parsed = $report | ConvertFrom-Json
+          Write-Host "Score: $($parsed.score)  blocked: $($parsed.blocked)"
+          exit 0
+
+      - name: Entscheidungslogik (Simulation)
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Continue"
+          & .\build\Release\aegis_demo.exe --simulate critical --json | Tee-Object -FilePath sim.json
+          $parsed = Get-Content sim.json -Raw | ConvertFrom-Json
+          if (-not $parsed.blocked) { throw "kritischer Befund wurde nicht blockiert" }
+          exit 0
+
+      - name: Watchdog-Start (kurz)
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Continue"
+          & .\build\Release\aegis_demo.exe --profile relaxed --watchdog 2 --interval 500 --quiet
+          exit 0
+
+      - name: Artefakt
+        uses: actions/upload-artifact@v4
+        with:
+          name: aegis-windows-x64
+          path: |
+            build/Release/aegis_demo.exe
+            build/Release/aegis.lib
+          if-no-files-found: warn
