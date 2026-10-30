@@ -1,0 +1,8 @@
+# Eintraege fuer den Interoperabilitaets-Test (C++ liest, Python schreibt)
+process	x64dbg
+process	ida64
+module	scyllahide
+window_class	WinDbgFrameClass
+window_title	Ghidra
+file	C:\Test\frida-agent.dll
+file	/opt/analysis/tool

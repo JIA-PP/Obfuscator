@@ -1,0 +1,1087 @@
+{
+  "version": 1,
+  "comment": "Quelldaten fuer tools/aegis_tool.py. Aenderungen hier + 'gen-tables' ausfuehren. Namen werden normalisiert (Kleinschreibung, Pfad weg, .exe weg, Leerzeichen bleiben).",
+  "tools": [
+    {
+      "tool": "IDA Pro / IDA Free",
+      "category": "disassembler",
+      "processes": [
+        "ida.exe",
+        "ida64.exe",
+        "idaq.exe",
+        "idaq64.exe",
+        "idat.exe",
+        "idat64.exe",
+        "idapyswitch.exe",
+        "idapython"
+      ],
+      "window_titles": [
+        "IDA Pro",
+        "IDA Free",
+        "IDA Educational",
+        " - IDA ",
+        "IDA: "
+      ]
+    },
+    {
+      "tool": "x64dbg / x32dbg",
+      "category": "debugger",
+      "processes": [
+        "x64dbg.exe",
+        "x32dbg.exe",
+        "x96dbg.exe"
+      ],
+      "window_classes": [
+        "x64dbg",
+        "x32dbg"
+      ],
+      "window_titles": [
+        "x64dbg",
+        "x32dbg",
+        "x96dbg"
+      ]
+    },
+    {
+      "tool": "Ghidra",
+      "category": "disassembler",
+      "processes": [
+        "ghidrarun",
+        "ghidra"
+      ],
+      "window_titles": [
+        "Ghidra",
+        "CodeBrowser"
+      ]
+    },
+    {
+      "tool": "Radare2",
+      "category": "disassembler",
+      "processes": [
+        "radare2.exe",
+        "r2.exe",
+        "rabin2.exe",
+        "rasm2.exe",
+        "rahash2.exe",
+        "radiff2.exe",
+        "rafind2.exe",
+        "ragg2.exe",
+        "rarun2.exe",
+        "rax2.exe",
+        "ravc2.exe",
+        "r2pm"
+      ],
+      "window_titles": [
+        "radare2",
+        " r2 "
+      ]
+    },
+    {
+      "tool": "Rizin",
+      "category": "disassembler",
+      "processes": [
+        "rizin.exe",
+        "rz-bin.exe",
+        "rz-asm.exe",
+        "rz-ax.exe",
+        "rz-diff.exe",
+        "rz-find.exe",
+        "rz-gg.exe",
+        "rz-hash.exe",
+        "rz-run.exe",
+        "rz-pipe.exe",
+        "rz-sign.exe"
+      ],
+      "window_titles": [
+        "rizin"
+      ]
+    },
+    {
+      "tool": "Cutter",
+      "category": "disassembler",
+      "processes": [
+        "cutter.exe"
+      ],
+      "window_titles": [
+        "Cutter"
+      ]
+    },
+    {
+      "tool": "Binary Ninja",
+      "category": "disassembler",
+      "processes": [
+        "binaryninja.exe",
+        "binaryninja_headless.exe",
+        "bn"
+      ],
+      "window_titles": [
+        "Binary Ninja"
+      ]
+    },
+    {
+      "tool": "Hopper Disassembler (macOS)",
+      "category": "disassembler",
+      "processes": [
+        "hopper",
+        "hopper disassembler",
+        "hopperdisassembler"
+      ],
+      "window_titles": [
+        "Hopper"
+      ]
+    },
+    {
+      "tool": "RetDec",
+      "category": "decompiler",
+      "processes": [
+        "retdec-decompiler.exe",
+        "retdec-decompiler",
+        "retdec-decompiler.py",
+        "retdec"
+      ],
+      "window_titles": [
+        "RetDec"
+      ]
+    },
+    {
+      "tool": "WinDbg / WinDbg Preview / cdb / kd / ntsd",
+      "category": "debugger",
+      "processes": [
+        "windbg.exe",
+        "windbgx.exe",
+        "dbgx.shell.exe",
+        "cdb.exe",
+        "kd.exe",
+        "ntsd.exe"
+      ],
+      "window_classes": [
+        "WinDbgFrameClass"
+      ],
+      "window_titles": [
+        "WinDbg"
+      ]
+    },
+    {
+      "tool": "GDB / gdbserver",
+      "category": "debugger",
+      "processes": [
+        "gdb",
+        "gdb.exe",
+        "gdbserver",
+        "gdb-multiarch",
+        "gdb-add-index",
+        "arm-none-eabi-gdb",
+        "aarch64-linux-gnu-gdb",
+        "x86_64-w64-mingw32-gdb",
+        "i686-w64-mingw32-gdb"
+      ],
+      "window_titles": []
+    },
+    {
+      "tool": "LLDB",
+      "category": "debugger",
+      "processes": [
+        "lldb",
+        "lldb.exe",
+        "lldb-server",
+        "lldb-mi"
+      ]
+    },
+    {
+      "tool": "rr (record & replay)",
+      "category": "debugger",
+      "processes": [
+        "rr",
+        "rr.exe"
+      ]
+    },
+    {
+      "tool": "Frida",
+      "category": "instrumentation",
+      "processes": [
+        "frida.exe",
+        "frida-server.exe",
+        "frida-server",
+        "frida-helper-32.exe",
+        "frida-helper-64.exe",
+        "frida-inject.exe",
+        "frida-trace.exe",
+        "frida-ps.exe",
+        "frida-ls-devices.exe",
+        "frida-kill.exe",
+        "frida-discover.exe",
+        "frida-apk.exe",
+        "frida-push.exe",
+        "frida-pull.exe"
+      ],
+      "modules": [
+        "frida-agent",
+        "frida-agent-32",
+        "frida-agent-64",
+        "frida-gadget",
+        "frida-gadget-32",
+        "frida-gadget-64",
+        "frida_helper",
+        "frida-helper"
+      ],
+      "window_titles": [
+        "Frida"
+      ]
+    },
+    {
+      "tool": "dnSpy",
+      "category": "dotnet-decompiler",
+      "processes": [
+        "dnspy.exe",
+        "dnspy.console.exe",
+        "dnspy-x86.exe"
+      ],
+      "window_titles": [
+        "dnSpy"
+      ]
+    },
+    {
+      "tool": "dnSpyEx (Fork)",
+      "category": "dotnet-decompiler",
+      "processes": [
+        "dnspy.exe",
+        "dnspy.console.exe",
+        "dnspy-x86.exe",
+        "dnspyex.exe"
+      ],
+      "window_titles": [
+        "dnSpyEx",
+        "dnSpy"
+      ]
+    },
+    {
+      "tool": "ILSpy",
+      "category": "dotnet-decompiler",
+      "processes": [
+        "ilspy.exe",
+        "ilspy.cmd",
+        "ilspycmd.exe",
+        "ilspycmd"
+      ],
+      "window_titles": [
+        "ILSpy"
+      ]
+    },
+    {
+      "tool": "dotPeek",
+      "category": "dotnet-decompiler",
+      "processes": [
+        "dotpeek.exe",
+        "dotpeek32.exe",
+        "dotpeek64.exe"
+      ],
+      "window_titles": [
+        "dotPeek"
+      ]
+    },
+    {
+      "tool": "JustDecompile",
+      "category": "dotnet-decompiler",
+      "processes": [
+        "justdecompile.exe"
+      ],
+      "window_titles": [
+        "JustDecompile"
+      ]
+    },
+    {
+      "tool": ".NET Reflector",
+      "category": "dotnet-decompiler",
+      "processes": [
+        "reflector.exe"
+      ],
+      "window_titles": [
+        ".NET Reflector"
+      ]
+    },
+    {
+      "tool": "Simple Assembly Explorer",
+      "category": "dotnet-decompiler",
+      "processes": [
+        "simpleassemblyexplorer.exe"
+      ]
+    },
+    {
+      "tool": "ILDASM / monodis",
+      "category": "dotnet-decompiler",
+      "processes": [
+        "ildasm.exe",
+        "monodis",
+        "ikdasm.exe"
+      ]
+    },
+    {
+      "tool": "angr",
+      "category": "instrumentation",
+      "processes": [
+        "angr-management.exe",
+        "angr-management",
+        "angr"
+      ],
+      "window_titles": [
+        "angr management",
+        "Angr Management"
+      ]
+    },
+    {
+      "tool": "Wireshark / tshark / dumpcap",
+      "category": "network-sniffer",
+      "processes": [
+        "wireshark.exe",
+        "tshark.exe",
+        "dumpcap.exe",
+        "sharkd.exe",
+        "wireshark-gtk.exe"
+      ],
+      "window_titles": [
+        "Wireshark",
+        "The Wireshark Network Analyzer"
+      ]
+    },
+    {
+      "tool": "HTTP Debugger",
+      "category": "network-sniffer",
+      "processes": [
+        "httpdebuggerui.exe",
+        "httpdebuggersvc.exe",
+        "httpdebuggerproxy.exe",
+        "httpdebugger.exe"
+      ],
+      "window_titles": [
+        "HTTP Debugger"
+      ]
+    },
+    {
+      "tool": "Fiddler",
+      "category": "network-sniffer",
+      "processes": [
+        "fiddler.exe",
+        "fiddler everywhere.exe",
+        "progress telerik fiddler.exe"
+      ],
+      "window_titles": [
+        "Fiddler"
+      ]
+    },
+    {
+      "tool": "mitmproxy",
+      "category": "network-sniffer",
+      "processes": [
+        "mitmproxy.exe",
+        "mitmdump.exe",
+        "mitmweb.exe",
+        "mitmproxy",
+        "mitmdump",
+        "mitmweb"
+      ]
+    },
+    {
+      "tool": "Charles Proxy",
+      "category": "network-sniffer",
+      "processes": [
+        "charles.exe",
+        "charles"
+      ],
+      "window_titles": [
+        "Charles"
+      ]
+    },
+    {
+      "tool": "Burp Suite",
+      "category": "network-sniffer",
+      "window_titles": [
+        "Burp Suite",
+        "Burp Project"
+      ]
+    },
+    {
+      "tool": "API Monitor",
+      "category": "instrumentation",
+      "processes": [
+        "apimonitor.exe",
+        "apimonitor-x64.exe",
+        "apimonitor-x86.exe"
+      ],
+      "window_titles": [
+        "API Monitor"
+      ]
+    },
+    {
+      "tool": "OllyDbg",
+      "category": "debugger",
+      "processes": [
+        "ollydbg.exe",
+        "ollydbg110.exe",
+        "ollydbg2.exe"
+      ],
+      "window_classes": [
+        "OLLYDBG"
+      ],
+      "window_titles": [
+        "OllyDbg"
+      ]
+    },
+    {
+      "tool": "Immunity Debugger",
+      "category": "debugger",
+      "processes": [
+        "immunitydebugger.exe"
+      ],
+      "window_titles": [
+        "Immunity Debugger"
+      ]
+    },
+    {
+      "tool": "HyperDbg",
+      "category": "debugger",
+      "processes": [
+        "hyperdbg.exe",
+        "hyperdbgdebugger.exe",
+        "hd.exe"
+      ],
+      "window_titles": [
+        "HyperDbg"
+      ]
+    },
+    {
+      "tool": "Visual Studio Remote Debugger / JIT Debugger",
+      "category": "debugger",
+      "processes": [
+        "msvsmon.exe",
+        "vsjitdebugger.exe"
+      ]
+    },
+    {
+      "tool": "Cheat Engine",
+      "category": "memory-scanner",
+      "processes": [
+        "cheatengine-x86_64.exe",
+        "cheatengine-i386.exe",
+        "cheatengine.exe",
+        "cheatengine-x86_64-sse4-avx2.exe",
+        "cheat engine.exe"
+      ],
+      "window_titles": [
+        "Cheat Engine"
+      ]
+    },
+    {
+      "tool": "Process Hacker / System Informer",
+      "category": "memory-scanner",
+      "processes": [
+        "processhacker.exe",
+        "systeminformer.exe"
+      ],
+      "window_titles": [
+        "Process Hacker",
+        "System Informer"
+      ]
+    },
+    {
+      "tool": "Process Monitor",
+      "category": "instrumentation",
+      "processes": [
+        "procmon.exe",
+        "procmon64.exe",
+        "procmon32.exe"
+      ],
+      "window_titles": [
+        "Process Monitor"
+      ]
+    },
+    {
+      "tool": "Process Explorer",
+      "category": "instrumentation",
+      "processes": [
+        "procexp.exe",
+        "procexp64.exe",
+        "procexp32.exe"
+      ],
+      "window_titles": [
+        "Process Explorer"
+      ]
+    },
+    {
+      "tool": "Scylla (Import-Rebuilder)",
+      "category": "pe-tool",
+      "processes": [
+        "scylla.exe",
+        "scylla_x64.exe",
+        "scylla_x86.exe"
+      ],
+      "window_titles": [
+        "Scylla"
+      ]
+    },
+    {
+      "tool": "PE-bear",
+      "category": "pe-tool",
+      "processes": [
+        "pe-bear.exe",
+        "pebear.exe"
+      ],
+      "window_titles": [
+        "PE-bear"
+      ]
+    },
+    {
+      "tool": "CFF Explorer",
+      "category": "pe-tool",
+      "processes": [
+        "cff explorer.exe"
+      ],
+      "window_titles": [
+        "CFF Explorer"
+      ]
+    },
+    {
+      "tool": "Detect It Easy",
+      "category": "packer-detector",
+      "processes": [
+        "die.exe",
+        "diec.exe",
+        "die64.exe",
+        "diec64.exe"
+      ],
+      "window_titles": [
+        "Detect It Easy"
+      ]
+    },
+    {
+      "tool": "PEiD",
+      "category": "packer-detector",
+      "processes": [
+        "peid.exe"
+      ],
+      "window_titles": [
+        "PEiD"
+      ]
+    },
+    {
+      "tool": "MegaDumper / ExtremeDumper",
+      "category": "memory-scanner",
+      "processes": [
+        "megadumper.exe",
+        "extremedumper.exe",
+        "extremedumper-x86.exe"
+      ],
+      "window_titles": [
+        "MegaDumper",
+        "ExtremeDumper"
+      ]
+    },
+    {
+      "tool": "ReClass.NET",
+      "category": "memory-scanner",
+      "processes": [
+        "reclass.net.exe",
+        "reclass.exe"
+      ],
+      "window_titles": [
+        "ReClass.NET"
+      ]
+    },
+    {
+      "tool": "HxD / 010 Editor (Hex-Editoren)",
+      "category": "hex-editor",
+      "processes": [
+        "hxd.exe",
+        "010editor.exe"
+      ],
+      "window_titles": [
+        "HxD",
+        "010 Editor"
+      ]
+    },
+    {
+      "tool": "ScyllaHide (Anti-Anti-Debug-Plugin)",
+      "category": "runtime-hook",
+      "modules": [
+        "scyllahide",
+        "scyllahidevt",
+        "scyllahidex64",
+        "scyllahide64",
+        "scyllahide32",
+        "scyllahide-dll"
+      ]
+    },
+    {
+      "tool": "SharpOD (Anti-Anti-Debug-Plugin)",
+      "category": "runtime-hook",
+      "modules": [
+        "sharpod"
+      ]
+    },
+    {
+      "tool": "Valgrind",
+      "category": "instrumentation",
+      "processes": [
+        "valgrind",
+        "valgrind.bin"
+      ]
+    },
+    {
+      "tool": "strace / ltrace",
+      "category": "instrumentation",
+      "processes": [
+        "strace",
+        "ltrace"
+      ]
+    },
+    {
+      "tool": "edb-debugger",
+      "category": "debugger",
+      "processes": [
+        "edb",
+        "edb-debugger"
+      ]
+    },
+    {
+      "tool": "objdump (binutils)",
+      "category": "disassembler",
+      "processes": [
+        "objdump"
+      ]
+    },
+    {
+      "tool": "class-dump / jtool (macOS)",
+      "category": "decompiler",
+      "processes": [
+        "class-dump",
+        "jtool",
+        "jtool2"
+      ]
+    },
+    {
+      "tool": "Intel Pin / DynamoRIO",
+      "category": "instrumentation",
+      "processes": [
+        "pin.exe",
+        "drrun.exe",
+        "drcov.exe",
+        "drrun"
+      ],
+      "modules": [
+        "pinvm",
+        "dynamorio"
+      ]
+    },
+    {
+      "tool": "Speakeasy / Qiling / Unicorn-basierte Emulatoren",
+      "category": "instrumentation",
+      "processes": [
+        "speakeasy.exe",
+        "qiling.exe"
+      ]
+    }
+  ],
+  "vm": {
+    "comment": "Artefakte, die auf einen Virtualisierer hindeuten (Gast-System).",
+    "processes": [
+      "vboxservice.exe",
+      "vboxtray.exe",
+      "vmtoolsd.exe",
+      "vmwaretray.exe",
+      "vmwareuser.exe",
+      "vmacthlp.exe",
+      "vmsrvc.exe",
+      "vmusrvc.exe",
+      "prl_tools.exe",
+      "prl_cc.exe",
+      "prl_disp_service.exe",
+      "qemu-ga.exe",
+      "xenservice.exe",
+      "vboxsds.exe"
+    ],
+    "modules": [
+      "vboxhook",
+      "vboxdisp",
+      "vboxmrxnp",
+      "vmhgfs",
+      "vmci",
+      "vmmouse",
+      "vmtools",
+      "vm3dgl",
+      "vmwgl",
+      "prl_hook"
+    ],
+    "mac_prefixes": [
+      "000569",
+      "000C29",
+      "001C14",
+      "005056",
+      "080027",
+      "0A0027",
+      "00155D",
+      "525400",
+      "00163E",
+      "001C42",
+      "0003FF",
+      "000FFE",
+      "0050F2",
+      "001B21"
+    ],
+    "files": [
+      "C:\\Windows\\System32\\drivers\\VBoxGuest.sys",
+      "C:\\Windows\\System32\\drivers\\VBoxMouse.sys",
+      "C:\\Windows\\System32\\drivers\\VBoxSF.sys",
+      "C:\\Windows\\System32\\drivers\\VBoxVideo.sys",
+      "C:\\Windows\\System32\\drivers\\VBoxWddm.sys",
+      "C:\\Windows\\System32\\drivers\\vboxdrv.sys",
+      "C:\\Windows\\System32\\VBoxService.exe",
+      "C:\\Windows\\System32\\VBoxTray.exe",
+      "C:\\Windows\\System32\\VBoxDisp.dll",
+      "C:\\Windows\\System32\\VBoxHook.dll",
+      "C:\\Program Files\\Oracle\\VirtualBox Guest Additions\\VBoxService.exe",
+      "C:\\Program Files\\Oracle\\VirtualBox Guest Additions\\VBoxControl.exe",
+      "C:\\Windows\\System32\\drivers\\vmhgfs.sys",
+      "C:\\Windows\\System32\\drivers\\vmmouse.sys",
+      "C:\\Windows\\System32\\drivers\\vmrawdsk.sys",
+      "C:\\Windows\\System32\\drivers\\vmusbmouse.sys",
+      "C:\\Windows\\System32\\drivers\\vmx_svga.sys",
+      "C:\\Windows\\System32\\drivers\\vmxnet.sys",
+      "C:\\Windows\\System32\\drivers\\vm3dmp.sys",
+      "C:\\Windows\\System32\\drivers\\vmmemctl.sys",
+      "C:\\Windows\\System32\\drivers\\vsock.sys",
+      "C:\\Windows\\System32\\drivers\\vmci.sys",
+      "C:\\Program Files\\VMware\\VMware Tools\\vmtoolsd.exe",
+      "C:\\Program Files\\VMware\\VMware Tools\\VMwareTray.exe",
+      "C:\\Windows\\System32\\drivers\\vioscsi.sys",
+      "C:\\Windows\\System32\\drivers\\viostor.sys",
+      "C:\\Windows\\System32\\drivers\\netkvm.sys",
+      "C:\\Windows\\System32\\drivers\\vioser.sys",
+      "C:\\Windows\\System32\\drivers\\balloon.sys",
+      "C:\\Windows\\System32\\drivers\\prl_fs.sys",
+      "C:\\Windows\\System32\\drivers\\prl_memdev.sys",
+      "C:\\Windows\\System32\\drivers\\prl_mouse.sys",
+      "C:\\Windows\\System32\\drivers\\prl_tg.sys",
+      "C:\\Windows\\System32\\drivers\\xen.sys",
+      "C:\\Windows\\System32\\drivers\\xenbus.sys",
+      "C:\\Windows\\System32\\drivers\\xennet.sys",
+      "C:\\Windows\\System32\\drivers\\xenvbd.sys",
+      "C:\\Program Files\\qemu-ga\\qemu-ga.exe",
+      "C:\\Windows\\System32\\drivers\\vioserial.sys",
+      "C:\\Windows\\System32\\drivers\\viorng.sys"
+    ],
+    "registry_keys": [
+      "HKLM\\SOFTWARE\\VMware, Inc.\\VMware Tools",
+      "HKLM\\SOFTWARE\\Oracle\\VirtualBox Guest Additions",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Services\\VBoxGuest",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Services\\VBoxMouse",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Services\\VBoxSF",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Services\\VBoxVideo",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Services\\VBoxWddm",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Services\\VMTools",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Services\\vmhgfs",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Services\\vmmouse",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Services\\vmci",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Services\\vm3dmp",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Services\\qemu-ga",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Services\\xenbus",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Services\\prl_fs",
+      "HKLM\\SOFTWARE\\Microsoft\\Virtual Machine\\Guest\\Parameters",
+      "HKLM\\HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 0\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0",
+      "HKLM\\HARDWARE\\Description\\System"
+    ],
+    "registry_values": [
+      {
+        "key": "HKLM\\HARDWARE\\Description\\System",
+        "value": "SystemBiosVersion",
+        "needle": "VBOX"
+      },
+      {
+        "key": "HKLM\\HARDWARE\\Description\\System",
+        "value": "SystemBiosVersion",
+        "needle": "VMWARE"
+      },
+      {
+        "key": "HKLM\\HARDWARE\\Description\\System",
+        "value": "SystemBiosVersion",
+        "needle": "QEMU"
+      },
+      {
+        "key": "HKLM\\HARDWARE\\Description\\System",
+        "value": "SystemBiosVersion",
+        "needle": "BOCHS"
+      },
+      {
+        "key": "HKLM\\HARDWARE\\Description\\System",
+        "value": "SystemBiosVersion",
+        "needle": "XEN"
+      },
+      {
+        "key": "HKLM\\HARDWARE\\Description\\System",
+        "value": "SystemBiosVersion",
+        "needle": "SEABIOS"
+      },
+      {
+        "key": "HKLM\\HARDWARE\\Description\\System",
+        "value": "SystemBiosVersion",
+        "needle": "HYPER-V"
+      },
+      {
+        "key": "HKLM\\HARDWARE\\Description\\System",
+        "value": "VideoBiosVersion",
+        "needle": "VMWARE"
+      },
+      {
+        "key": "HKLM\\HARDWARE\\Description\\System",
+        "value": "VideoBiosVersion",
+        "needle": "VIRTUALBOX"
+      },
+      {
+        "key": "HKLM\\HARDWARE\\Description\\System",
+        "value": "Identifier",
+        "needle": "VBOX"
+      },
+      {
+        "key": "HKLM\\HARDWARE\\Description\\System",
+        "value": "Identifier",
+        "needle": "VMWARE"
+      },
+      {
+        "key": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Disk\\Enum",
+        "value": "0",
+        "needle": "VEN_VBOX"
+      },
+      {
+        "key": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Disk\\Enum",
+        "value": "0",
+        "needle": "VMWARE"
+      },
+      {
+        "key": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Disk\\Enum",
+        "value": "0",
+        "needle": "QEMU"
+      },
+      {
+        "key": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Disk\\Enum",
+        "value": "0",
+        "needle": "VIRTUAL HD"
+      },
+      {
+        "key": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Disk\\Enum",
+        "value": "1",
+        "needle": "VEN_VBOX"
+      },
+      {
+        "key": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Disk\\Enum",
+        "value": "1",
+        "needle": "VMWARE"
+      },
+      {
+        "key": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Disk\\Enum",
+        "value": "1",
+        "needle": "QEMU"
+      }
+    ],
+    "pci_prefixes": [
+      "VEN_80EE",
+      "VEN_15AD",
+      "VEN_1AF4",
+      "VEN_1234",
+      "VEN_1B36",
+      "VEN_1414",
+      "VEN_0E0B"
+    ]
+  },
+  "sandbox": {
+    "comment": "Automatisierte Analyse-/Sandbox-Umgebungen.",
+    "files": [
+      "C:\\Windows\\System32\\SbieDll.dll",
+      "C:\\Windows\\System32\\drivers\\SbieDrv.sys",
+      "C:\\Program Files\\Sandboxie\\SbieSvc.exe",
+      "C:\\Program Files\\Sandboxie-Plus\\SbieSvc.exe",
+      "C:\\Cuckoo\\",
+      "C:\\cuckoo\\",
+      "C:\\cuckoo\\agent\\",
+      "C:\\agent\\",
+      "C:\\analysis\\",
+      "C:\\sandbox\\",
+      "C:\\sample\\",
+      "C:\\samples\\",
+      "C:\\malware\\",
+      "C:\\temp\\sample.exe",
+      "C:\\Windows\\System32\\python27.dll",
+      "C:\\Windows\\System32\\snxhk.dll",
+      "C:\\Windows\\System32\\cmdvrt32.dll",
+      "C:\\Windows\\System32\\api_log.dll",
+      "C:\\Windows\\System32\\dir_watch.dll",
+      "C:\\Windows\\System32\\vmcheck.dll",
+      "C:\\Windows\\System32\\wpespy.dll",
+      "C:\\Windows\\System32\\pstorec.dll"
+    ],
+    "users": [
+      "sandbox",
+      "malware",
+      "virus",
+      "cuckoo",
+      "analyst",
+      "analysis",
+      "vbuser",
+      "vboxuser",
+      "vmuser",
+      "test",
+      "testuser",
+      "tester",
+      "wdagutilityaccount",
+      "jdoe",
+      "john doe",
+      "foobar",
+      "sample",
+      "user1"
+    ],
+    "computers": [
+      "sandbox",
+      "malware",
+      "virus",
+      "cuckoo",
+      "analysis",
+      "analyst",
+      "analysis-pc",
+      "sandbox-pc",
+      "test",
+      "test-pc",
+      "testpc",
+      "vb",
+      "vbox",
+      "virtual",
+      "vm",
+      "vmware",
+      "win7",
+      "win10",
+      "windows7",
+      "windows10",
+      "microsoft",
+      "user-pc",
+      "pc",
+      "agent",
+      "research"
+    ],
+    "modules": [
+      "sbiedll",
+      "snxhk",
+      "cmdvrt32",
+      "api_log",
+      "dir_watch",
+      "vmcheck",
+      "wpespy",
+      "pstorec",
+      "cuckoomon",
+      "avghookx",
+      "avghooka",
+      "sxln",
+      "sxin"
+    ]
+  },
+  "command_line_markers": [
+    "frida",
+    "angr",
+    "ghidra",
+    "radare2",
+    "rizin",
+    "x64dbg",
+    "retdec",
+    "binaryninja",
+    "dnspy",
+    "ilspycmd",
+    "qiling",
+    "speakeasy",
+    "pydbg",
+    "uncompyle",
+    "pyinstxtractor",
+    "il2cppdumper",
+    "frida-trace"
+  ],
+  "vm_identifiers": [
+    "vmware",
+    "virtualbox",
+    "innotek",
+    "qemu",
+    "bochs",
+    "parallels",
+    "bhyve",
+    "xen",
+    "kvm",
+    "openstack",
+    "virtual machine",
+    "seabios",
+    "ovmf",
+    "qnx",
+    "hyper-v",
+    "virtualbox.org"
+  ],
+  "hypervisor_vendor_strings": [
+    "VMwareVMware",
+    "VBoxVBoxVBox",
+    "KVMKVMKVM",
+    "LinuxKVMHv",
+    "TCGTCGTCGTCG",
+    "Microsoft Hv",
+    "XenVMMXenVMM",
+    "bhyve bhyve",
+    "prl hyperv",
+    "ACRNACRNACRN",
+    "QNXQVMBSQG",
+    "SR-IOV",
+    "KVMKVMKVMKVM",
+    "bhyve"
+  ],
+  "cpu_brand_markers": [
+    "qemu",
+    "virtualbox",
+    "kvm",
+    "vmware",
+    "bochs",
+    "virtual cpu",
+    "xen",
+    "parallels",
+    "hyper-v"
+  ],
+  "container_markers": [
+    "docker",
+    "kubepods",
+    "lxc",
+    "containerd",
+    "podman",
+    "garden",
+    "buildkit"
+  ],
+  "container_files": [
+    "/.dockerenv",
+    "/run/.containerenv",
+    "/run/systemd/container",
+    "/var/run/secrets/kubernetes.io"
+  ],
+  "tracer_names": [
+    "gdb",
+    "lldb",
+    "rr",
+    "strace",
+    "ltrace",
+    "radare2",
+    "rizin",
+    "frida",
+    "frida-server",
+    "valgrind",
+    "gdbserver",
+    "edb",
+    "perf",
+    "delve",
+    "dlv"
+  ],
+  "instrumentation_threads": [
+    "gum-js-loop",
+    "gum-js",
+    "gmain",
+    "gdbus",
+    "pool-spawner",
+    "frida",
+    "gum-js-loop-worker",
+    "linjector"
+  ]
+}
