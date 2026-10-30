@@ -88,6 +88,19 @@ jobs:
           path: build-log.txt
           if-no-files-found: warn
 
+      - name: Fehlerdetails als PR-Kommentar
+        if: failure()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        continue-on-error: true
+        run: |
+          pr=$(gh pr list --head "${GITHUB_REF_NAME}" --json number -q '.[0].number' || true)
+          if [ -n "$pr" ] && [ -f build-log.txt ]; then
+            { echo "MSVC-Buildfehler (automatisch):"; echo '```';               grep -iE "error|warning" build-log.txt | head -60; echo '```'; } > comment.md
+            gh pr comment "$pr" --body-file comment.md
+          fi
+
       - name: Tests (Unit + Klartext-Scanner + Tabellen)
         run: ctest --test-dir build -C Release --output-on-failure
 
