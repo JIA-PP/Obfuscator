@@ -41,6 +41,9 @@ void print_usage() {
         "  --extra-process <name>       weiteren Werkzeugnamen pruefen\n"
         "  --simulate <severity> critical|high|medium|low  (synthetischer Befund)\n"
         "  --ignore-vm          VM-/Sandbox-/Timing-Checks aus (Demo auf echten Hosts)\n"
+        "\n"
+        "Exit-Code: 0 = sauber, 1 = blockiert (auch mit --action none), "
+        "sonst der konfigurierte exit_code.\n"
         "  --version             Version ausgeben\n"
         "  --help                diese Hilfe\n",
         aegis::Guard::version());
